@@ -19,6 +19,9 @@ import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { LoginButton } from '@/components/login-button'
 
+import Image from 'next/image';
+
+
 export async function Header() {
   const session = await auth()
   return (
@@ -37,8 +40,12 @@ export async function Header() {
           </Sidebar>
         ) : (
           <Link href="/" target="_blank" rel="nofollow">
-            <IconNextChat className="w-6 h-6 mr-2 dark:hidden" inverted />
-            <IconNextChat className="hidden w-6 h-6 mr-2 dark:block" />
+              <Image
+                src="/favicon.ico"
+                alt="ChatWith"
+                width={40}
+                height={40}
+              />
           </Link>
         )}
         <div className="flex items-center">
@@ -55,21 +62,19 @@ export async function Header() {
       <div className="flex items-center justify-end space-x-2">
         <a
           target="_blank"
-          href="https://github.com/vercel/nextjs-ai-chatbot/"
+          href="https://plugins.sdan.io"
           rel="noopener noreferrer"
           className={cn(buttonVariants({ variant: 'outline' }))}
         >
-          <IconGitHub />
-          <span className="hidden ml-2 md:flex">GitHub</span>
+          <span className="hidden ml-2 md:flex">Help</span>
         </a>
         <a
-          href="https://github.com/vercel/nextjs-ai-chatbot/"
+          href="https://chat.openai.com/share/1ae4921a-bf5e-4baa-a4af-32514dc70c46"
           target="_blank"
           className={cn(buttonVariants())}
         >
-          <IconVercel className="mr-2" />
-          <span className="hidden sm:block">Deploy to Vercel</span>
-          <span className="sm:hidden">Deploy</span>
+          <span className="hidden sm:block">Use ChatGPT</span>
+          <span className="sm:hidden">ChatGPT</span>
         </a>
       </div>
     </header>
