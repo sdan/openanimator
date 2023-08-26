@@ -32,6 +32,12 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
         {message.role === 'user' ? <IconUser /> : <IconOpenAI />}
       </div>
       <div className="flex-1 px-1 ml-4 space-y-2 overflow-hidden">
+        {message.role === 'function' && message.function_call && (
+          <div>
+            <p>Function name: {message.function_call.name}</p>
+            <p>Function arguments: {message.function_call.arguments}</p>
+          </div>
+        )}
         <MemoizedReactMarkdown
           className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
           remarkPlugins={[remarkGfm, remarkMath]}

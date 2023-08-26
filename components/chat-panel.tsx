@@ -35,6 +35,27 @@ export function ChatPanel({
       <ButtonScrollToBottom />
       <div className="mx-auto sm:max-w-2xl sm:px-4">
         <div className="flex h-10 items-center justify-center">
+          <Button
+            variant="outline"
+            onClick={() => stop()}
+            className="bg-background"
+          >
+            PDF
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => stop()}
+            className="bg-background"
+          >
+            Video
+          </Button>
+          <Button
+            variant="outline"
+            onClick={() => stop()}
+            className="bg-background"
+          >
+            Web
+          </Button>
           {isLoading ? (
             <Button
               variant="outline"

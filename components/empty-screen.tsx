@@ -6,7 +6,7 @@ import { IconArrowRight } from '@/components/ui/icons'
 
 const exampleMessages = [
   {
-    heading: 'Explain technical concepts',
+    heading: 'Explain technical concepts from this PDF',
     message: `What is a "serverless function"?`
   },
   {
@@ -14,7 +14,7 @@ const exampleMessages = [
     message: 'Summarize the following article for a 2nd grader: \n'
   },
   {
-    heading: 'Draft an email',
+    heading: 'Tell me the most important points from this video',
     message: `Draft an email to my boss about the following: \n`
   }
 ]
@@ -27,12 +27,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
           Welcome to ChatWithPlugins!
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          This is an open source AI chatbot app template built with{' '}
-          <ExternalLink href="https://nextjs.org">Next.js</ExternalLink> and{' '}
-          <ExternalLink href="https://vercel.com/storage/kv">
-            Vercel KV
-          </ExternalLink>
-          .
+          This is a dedicated chat app made for ChatWithPlugins. All ChatWithPlugins are built into this app. PDF, Web, Video, Lawyer, Code, and more.
         </p>
         <p className="leading-normal text-muted-foreground">
           You can start a conversation here or try the following examples:

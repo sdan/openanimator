@@ -87,13 +87,9 @@ export default async function Image({ params }: ImageProps) {
             >
               <path d="M24 22.525H0l12-21.05 12 21.05z" />
             </svg>
-            <div tw="flex text-[1.8rem] ml-4 text-[#9b9ba4]">
-              Built with{' '}
-              <div tw="flex text-[#eaeaf0] ml-2 mr-2">Vercel AI SDK</div> &
-              <div tw="flex text-[#eaeaf0] ml-2">KV</div>
-            </div>
+            <div tw="text-[1.8rem] ml-2 text-[#9b9ba4]">ChatWithPlugins</div>
           </div>
-          <div tw="text-[1.8rem] ml-auto text-[#9b9ba4]">chat.vercel.ai</div>
+          <div tw="text-[1.8rem] ml-auto text-[#9b9ba4]">chatwithplugins.com</div>
         </div>
       </div>
     ),
