@@ -2,6 +2,7 @@ import NextAuth, { type DefaultSession } from 'next-auth'
 import GitHub from 'next-auth/providers/github'
 import Auth0Provider from "next-auth/providers/auth0";
 
+
 declare module 'next-auth' {
   interface Session {
     user: {
@@ -13,7 +14,8 @@ declare module 'next-auth' {
       picture: string,
       image: string,
       user_id: string,
-    } & DefaultSession['user']
+    } & DefaultSession['user'],
+    accessToken: any,
   }
 }
 
@@ -30,14 +32,25 @@ export const {
     })
   ],
   callbacks: {
-    jwt({ token, profile }) {
+    jwt: async ({ token, profile, account }) => {
+      console.log("jwt tok",token);
+      console.log("jwt prof",profile);
+      console.log("jwt acc",account);
       if (profile) {
         token.id = profile.id
         token.image = profile.picture
       }
+      if (account?.access_token){
+        token.accessToken = account.access_token
+      }
       return token
     },
+    session: async ({ session, token }) => {
+      session.accessToken = token.accessToken
+      return session
+    },
     authorized({ auth }) {
+      // console.log("is user auth?",auth);
       return !!auth?.user // this ensures there is a logged in user for -every- request
     }
   },

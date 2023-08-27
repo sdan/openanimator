@@ -12,7 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
-import { IconExternalLink } from '@/components/ui/icons'
+import { IconExternalLink, IconLock } from '@/components/ui/icons'
 
 export interface UserMenuProps {
   user: Session['user']
@@ -62,6 +62,18 @@ export function UserMenu({ user }: UserMenuProps) {
               Billing
             </a>
           </DropdownMenuItem>
+          <DropdownMenuItem className="text-xs">
+            <a
+              href="https://plugins.sdan.io/privacy"
+              target="_blank"
+              rel="nofollow"
+              className="flex items-center"
+            >
+              <IconLock className="mr-2" />
+              Privacy
+            </a>
+          </DropdownMenuItem>
+
           <DropdownMenuItem
             onClick={() =>
               signOut({
