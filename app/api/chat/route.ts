@@ -64,24 +64,24 @@ export async function POST(req: Request) {
       console.log("route name swithc", name);
       switch (name) {
         case 'get_weather':
-          result = await getWeather(args['city']);
+          result = await getWeather(args['city'] as string);
           break;
         case 'pdf_retrieval':
-          result = await chatWithPdfRetriever(args['query'], args['pdf_url']);
+          result = await chatWithPdfRetriever(args['query'] as string, args['pdf_url'] as string);
           data.append({
             function: 'pdf_retrieval'
           })
           break;
         case 'video_retrieval':
           console.log("picking up video_retrieval");
-          result = await chatWithVideoRetriever(args['query'], args['video_id']);
+          result = await chatWithVideoRetriever(args['query'] as string, args['video_id'] as string);
           data.append({
             function: 'video_retrieval'
           })
           break;
         case 'web_retrieval':
           console.log("picking up web_retrieval");
-          result = await chatWithWebRetriever(args['query'], args['url']);
+          result = await chatWithWebRetriever(args['query'] as string, args['url'] as string);
           data.append({
             function: 'web_retrieval'
           })

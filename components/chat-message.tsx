@@ -32,7 +32,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
         {message.role === 'user' ? <IconUser /> : <IconOpenAI />}
       </div>
       <div className="flex-1 px-1 ml-4 space-y-2 overflow-hidden">
-        {message.role === 'function' && message.function_call && (
+          {message.role === 'function' && message.function_call && typeof message.function_call !== 'string' && (
           <div>
             <p>Function name: {message.function_call.name}</p>
             <p>Function arguments: {message.function_call.arguments}</p>
