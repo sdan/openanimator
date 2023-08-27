@@ -4,6 +4,20 @@ import * as React from 'react'
 
 import { cn } from '@/lib/utils'
 
+function IconLock({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 256 256"
+      fill="currentColor"
+      className={cn('h-4 w-4', className)}
+      {...props}
+    >
+      <path d="M200 112h-16V72a56 56 0 0 0-112 0v40H56a16 16 0 0 0-16 16v96a16 16 0 0 0 16 16h144a16 16 0 0 0 16-16v-96a16 16 0 0 0-16-16Zm-96-40a24 24 0 0 1 48 0v40h-48Z" />
+    </svg>
+  )
+}
+
 function IconNextChat({
   className,
   inverted,
@@ -15,6 +29,7 @@ function IconNextChat({
     <svg
       viewBox="0 0 17 17"
       fill="none"
+      
       xmlns="http://www.w3.org/2000/svg"
       className={cn('h-4 w-4', className)}
       {...props}
@@ -503,5 +518,6 @@ export {
   IconShare,
   IconUsers,
   IconExternalLink,
-  IconChevronUpDown
+  IconChevronUpDown,
+  IconLock
 }
