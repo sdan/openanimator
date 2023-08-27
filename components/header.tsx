@@ -70,7 +70,7 @@ export async function Header() {
           <span className="hidden ml-2 md:flex">Help</span>
         </a>
         <a
-          href="https://chat.openai.com/share/1ae4921a-bf5e-4baa-a4af-32514dc70c46"
+          href="https://chat.openai.com/"
           target="_blank"
           className={cn(buttonVariants())}
         >

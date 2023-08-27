@@ -52,7 +52,8 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         }
       }
     })
-  // console.log("dattta",data);
+  const functionCalled = data && data.length > 0 ? data[data.length - 1].function : null;
+  
   return (
     <>
       <div className={cn('pb-[200px] pt-4 md:pt-10', className)}>
@@ -74,6 +75,7 @@ export function Chat({ id, initialMessages, className }: ChatProps) {
         messages={messages}
         input={input}
         setInput={setInput}
+        functionCalled={functionCalled}
       />
 
       <Dialog open={previewTokenDialog} onOpenChange={setPreviewTokenDialog}>
