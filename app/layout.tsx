@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 
 import { Toaster } from 'react-hot-toast'
 
+import { Analytics } from '@vercel/analytics/react';
+
 import '@/app/globals.css'
 import { fontMono, fontSans } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
@@ -48,6 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           </div>
           <TailwindIndicator />
         </Providers>
+        <Analytics />
       </body>
     </html>
   )
