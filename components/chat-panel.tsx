@@ -1,10 +1,10 @@
 import { type UseChatHelpers } from 'ai/react'
-
 import { Button } from '@/components/ui/button'
 import { PromptForm } from '@/components/prompt-form'
 import { ButtonScrollToBottom } from '@/components/button-scroll-to-bottom'
 import { IconRefresh, IconStop } from '@/components/ui/icons'
 import { FooterText } from '@/components/footer'
+import { useTheme } from 'next-themes' // Import the useTheme hook
 
 export interface ChatPanelProps
   extends Pick<
@@ -32,6 +32,7 @@ export function ChatPanel({
   messages,
   functionCalled
 }: ChatPanelProps) {
+  const { theme } = useTheme() // Use the useTheme hook to get the current theme
   return (
     <div className="fixed inset-x-0 bottom-0 bg-gradient-to-b from-muted/10 from-10% to-muted/30 to-50%">
       <ButtonScrollToBottom />
@@ -40,21 +41,21 @@ export function ChatPanel({
           <Button
             variant="outline"
             disabled
-            className={functionCalled === 'pdf_retrieval' ? "bg-highlight text-black" : "bg-background"}
+            className={functionCalled === 'pdf_retrieval' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
           >
             {functionCalled === 'pdf_retrieval' ? "Used PDF Retrieval" : "PDF"}
           </Button>
           <Button
             variant="outline"
             disabled
-            className={functionCalled === 'video_retrieval' ? "bg-highlight text-black" : "bg-background"}
+            className={functionCalled === 'video_retrieval' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
           >
             {functionCalled === 'video_retrieval' ? "Used Video Retrieval" : "Video"}
           </Button>
           <Button
             variant="outline"
             disabled
-            className={functionCalled === 'web_retrieval' ? "bg-highlight text-black" : "bg-background"}
+            className={functionCalled === 'web_retrieval' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
           >
             {functionCalled === 'web_retrieval' ? "Used Web Retrieval" : "Web"}
           </Button>

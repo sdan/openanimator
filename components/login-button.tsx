@@ -5,7 +5,7 @@ import { signIn } from 'next-auth/react'
 
 import { cn } from '@/lib/utils'
 import { Button, type ButtonProps } from '@/components/ui/button'
-import { IconGitHub, IconSpinner } from '@/components/ui/icons'
+import { IconUser, IconSpinner } from '@/components/ui/icons'
 
 interface LoginButtonProps extends ButtonProps {
   showGithubIcon?: boolean
@@ -28,15 +28,16 @@ export function LoginButton({
         signIn('auth0', { callbackUrl: `/` })
       }}
       disabled={isLoading}
-      className={cn(className)}
+      className={cn(className, "text-10xl")} // Increase the size of the button text by 10 times
       {...props}
     >
       {isLoading ? (
-        <IconSpinner className="mr-2 animate-spin" />
+        <IconSpinner className="mr-2 animate-spin text-10xl" /> // Increase the size of the spinner icon by 10 times
       ) : showGithubIcon ? (
-        <IconGitHub className="mr-2" />
+        <IconUser className="mr-2 text-10xl" /> // Increase the size of the GitHub icon by 10 times
       ) : null}
       {text}
+      
     </Button>
   )
 }
