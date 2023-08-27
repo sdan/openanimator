@@ -16,9 +16,9 @@ export interface ChatPanelProps
     | 'stop'
     | 'input'
     | 'setInput'
-    | 'functionCalled'
   > {
-  id?: string
+  id?: string,
+  functionCalled?: string
 }
 
 export function ChatPanel({

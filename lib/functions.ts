@@ -6,8 +6,6 @@ import {
   CompletionCreateParams
 } from 'openai/resources/chat';
 
-import { CompletionCreateParams } from 'openai/resources/chat'
-
 export const functions: CompletionCreateParams.Function[] = [
   {
     name: 'get_weather',
