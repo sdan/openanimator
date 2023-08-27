@@ -16,6 +16,7 @@ export interface ChatPanelProps
     | 'stop'
     | 'input'
     | 'setInput'
+    | 'functionCalled'
   > {
   id?: string
 }
@@ -28,7 +29,8 @@ export function ChatPanel({
   reload,
   input,
   setInput,
-  messages
+  messages,
+  functionCalled
 }: ChatPanelProps) {
   return (
     <div className="fixed inset-x-0 bottom-0 bg-gradient-to-b from-muted/10 from-10% to-muted/30 to-50%">
@@ -37,24 +39,24 @@ export function ChatPanel({
         <div className="flex h-10 items-center justify-center">
           <Button
             variant="outline"
-            onClick={() => stop()}
-            className="bg-background"
+            disabled
+            className={functionCalled === 'pdf_retrieval' ? "bg-highlight text-black" : "bg-background"}
           >
-            PDF
+            {functionCalled === 'pdf_retrieval' ? "Used PDF Retrieval" : "PDF"}
           </Button>
           <Button
             variant="outline"
-            onClick={() => stop()}
-            className="bg-background"
+            disabled
+            className={functionCalled === 'video_retrieval' ? "bg-highlight text-black" : "bg-background"}
           >
-            Video
+            {functionCalled === 'video_retrieval' ? "Used Video Retrieval" : "Video"}
           </Button>
           <Button
             variant="outline"
-            onClick={() => stop()}
-            className="bg-background"
+            disabled
+            className={functionCalled === 'web_retrieval' ? "bg-highlight text-black" : "bg-background"}
           >
-            Web
+            {functionCalled === 'web_retrieval' ? "Used Web Retrieval" : "Web"}
           </Button>
           {isLoading ? (
             <Button
