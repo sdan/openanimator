@@ -7,15 +7,15 @@ import { IconArrowRight } from '@/components/ui/icons'
 const exampleMessages = [
   {
     heading: 'Explain technical concepts from this PDF',
-    message: `What is a "serverless function"?`
+    message: `tell me the new advancements in material sciences from this paper and what they found https://cs.stanford.edu/people/zjl/pdf/lk99.pdf `
   },
   {
     heading: 'Summarize an article',
-    message: 'Summarize the following article for a 2nd grader: \n'
+    message: 'Summarize the following article for a 2nd grader: \n explain and give bullet points on what its about https://cacm.acm.org/news/275684-historic-algorithms-help-unlock-shortest-path-problem-breakthrough/fulltext'
   },
   {
     heading: 'Tell me the most important points from this video',
-    message: `Draft an email to my boss about the following: \n`
+    message: `Tell me the highlights about this video. Can I be friends with an Orca? \n https://www.youtube.com/watch?v=-NNwXROZ-48`
   }
 ]
 
@@ -27,7 +27,7 @@ export function EmptyScreen({ setInput }: Pick<UseChatHelpers, 'setInput'>) {
           Welcome to ChatWithPlugins!
         </h1>
         <p className="mb-2 leading-normal text-muted-foreground">
-          This is a dedicated chat app made for ChatWithPlugins. All ChatWithPlugins are built into this app. PDF, Web, Video, Lawyer, Code, and more.
+          This is a dedicated chat app made for ChatWithPlugins. All ChatWithPlugins are built into this app. PDF, Web, Video, Lawyer, Researcher, Code, and more.
         </p>
         <p className="leading-normal text-muted-foreground">
           You can start a conversation here or try the following examples:
