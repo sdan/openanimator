@@ -33,9 +33,6 @@ export const {
   ],
   callbacks: {
     jwt: async ({ token, profile, account }) => {
-      console.log("jwt tok",token);
-      console.log("jwt prof",profile);
-      console.log("jwt acc",account);
       if (profile) {
         token.id = profile.id
         token.image = profile.picture

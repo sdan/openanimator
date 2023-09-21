@@ -62,9 +62,16 @@ export function ChatPanel({
           <Button
             variant="outline"
             disabled
-            className={functionCalled === 'math_animation' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
+            className={functionCalled === 'generate_math_animation_code' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
           >
-            {functionCalled === 'math_animation' ? "Used Math Animation" : "Math Animation"}
+            {functionCalled === 'generate_math_animation_code' ? "Generated Manim Code" : "Manim Generator"}
+          </Button>
+          <Button
+            variant="outline"
+            disabled
+            className={functionCalled === 'render_math_animation_code' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
+          >
+            {functionCalled === 'render_math_animation_code' ? "Rendered Manim Code" : "Manim Renderer"}
           </Button>
           {isLoading ? (
             <Button
