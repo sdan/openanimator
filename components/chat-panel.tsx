@@ -59,6 +59,13 @@ export function ChatPanel({
           >
             {functionCalled === 'web_retrieval' ? "Used Web Retrieval" : "Web"}
           </Button>
+          <Button
+            variant="outline"
+            disabled
+            className={functionCalled === 'math_animation' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
+          >
+            {functionCalled === 'math_animation' ? "Used Math Animation" : "Math Animation"}
+          </Button>
           {isLoading ? (
             <Button
               variant="outline"
