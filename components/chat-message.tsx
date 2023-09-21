@@ -20,7 +20,7 @@ export interface ChatMessageProps {
 }
 
 const handleVideoUrls = (node: any) => { // You can replace 'any' with the actual type of node if known
-  if (node.tagName === 'a' && node.properties?.href?.endsWith('.mp4')) {
+  if (node?.tagName === 'a' && node?.properties?.href?.endsWith('.mp4')) {
     return <VideoComponent url={node.properties.href} />;
   }
   return undefined;
@@ -52,13 +52,15 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
         <MemoizedReactMarkdown
           className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
           remarkPlugins={[remarkGfm, remarkMath]}
-          rehypePlugins={[rehypeRaw]}
+          //@ts-ignore
+          rehypePlugins={[rehypeParse, rehypeRaw, handleVideoUrls]}
           components={{
             p({ children }) {
               return <p className="mb-2 last:mb-0">{children}</p>
             },
             video: ({node, ...props}) => {
-              return <ReactPlayer url={node.properties.src} controls {...props} />
+              //@ts-ignore
+              return <ReactPlayer url={node?.properties?.src} controls {...props} />
             },
             code({ node, inline, className, children, ...props }) {
               if (children.length) {
