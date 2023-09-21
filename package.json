@@ -31,7 +31,7 @@
     "clsx": "^1.2.1",
     "focus-trap-react": "^10.1.1",
     "nanoid": "^4.0.2",
-    "next": "13.4.7-canary.1",
+    "next": "13.4.6",
     "next-auth": "0.0.0-manual.83c4ebd1",
     "next-themes": "^0.2.1",
     "openai": "4.2.0",
@@ -40,8 +40,11 @@
     "react-hot-toast": "^2.4.1",
     "react-intersection-observer": "^9.4.4",
     "react-markdown": "^8.0.7",
+    "react-player": "^2.13.0",
     "react-syntax-highlighter": "^15.5.0",
     "react-textarea-autosize": "^8.4.1",
+    "rehype-parse": "^9.0.0",
+    "rehype-raw": "^7.0.0",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1"
   },
@@ -62,7 +65,7 @@
     "tailwind-merge": "^1.12.0",
     "tailwindcss": "^3.3.1",
     "tailwindcss-animate": "^1.0.5",
-    "typescript": "^5.1.3"
+    "typescript": "4.9.5"
   },
   "packageManager": "pnpm@8.6.3"
 }

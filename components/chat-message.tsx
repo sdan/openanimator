@@ -4,16 +4,27 @@
 import { Message } from 'ai'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
+import rehypeParse from 'rehype-parse';
+import rehypeRaw from 'rehype-raw';
 
 import { cn } from '@/lib/utils'
 import { CodeBlock } from '@/components/ui/codeblock'
 import { MemoizedReactMarkdown } from '@/components/markdown'
 import { IconOpenAI, IconUser } from '@/components/ui/icons'
 import { ChatMessageActions } from '@/components/chat-message-actions'
+import { VideoComponent } from '@/components/video'
+import ReactPlayer from 'react-player'
 
 export interface ChatMessageProps {
   message: Message
 }
+
+const handleVideoUrls = (node: any) => { // You can replace 'any' with the actual type of node if known
+  if (node.tagName === 'a' && node.properties?.href?.endsWith('.mp4')) {
+    return <VideoComponent url={node.properties.href} />;
+  }
+  return undefined;
+};
 
 export function ChatMessage({ message, ...props }: ChatMessageProps) {
   return (
@@ -41,9 +52,13 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
         <MemoizedReactMarkdown
           className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
           remarkPlugins={[remarkGfm, remarkMath]}
+          rehypePlugins={[rehypeRaw]}
           components={{
             p({ children }) {
               return <p className="mb-2 last:mb-0">{children}</p>
+            },
+            video: ({node, ...props}) => {
+              return <ReactPlayer url={node.properties.src} controls {...props} />
             },
             code({ node, inline, className, children, ...props }) {
               if (children.length) {
