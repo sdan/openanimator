@@ -55,6 +55,16 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
           //@ts-ignore
           rehypePlugins={[rehypeParse, rehypeRaw, handleVideoUrls]}
           components={{
+            a: ({node, ...props}) => {
+              const href = node?.properties?.href;
+              //@ts-ignore
+              if (href && ReactPlayer.canPlay(href)) {
+                //@ts-ignore
+                return <ReactPlayer url={href} controls />;
+              } else {
+                return <a {...props} />;
+              }
+            },
             p({ children }) {
               return <p className="mb-2 last:mb-0">{children}</p>
             },
