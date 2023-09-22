@@ -54,18 +54,8 @@ export async function Header() {
             <h1 className="font-semibold ml-3 text-lg text-stone-700">ChatWithPlugins</h1>
           </>
         )}
-        {/* <div className="ml-2 flex items-center">
-          <IconSeparator className="w-6 h-6 text-muted-foreground/50" />
-          {session?.user ? (
-            <UserMenu user={session.user} />
-          ) : (
-            <Button variant="link" asChild className="-ml-2">
-              <Link href="/sign-in?callbackUrl=/">Login</Link>
-            </Button>
-          )}
-        </div> */}
       </div>
-      <div className="flex items-center justify-end space-x-2">
+      <div className="flex items-center justify-end space-x-3">
         <a
           target="_blank"
           href="https://plugins.sdan.io"
@@ -82,7 +72,11 @@ export async function Header() {
           <span className="hidden sm:block">Use ChatGPT</span>
           <span className="sm:hidden">ChatGPT</span>
         </a> */}
-        <LoginButton text='Login' showGithubIcon={true} className='text-10xl' />
+        {session?.user ? (
+          <UserMenu user={session.user} />
+        ) : (
+          <LoginButton text='Login' showGithubIcon={true} className='text-10xl' />
+        )}
       </div>
     </header>
   )
