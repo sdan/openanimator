@@ -48,11 +48,11 @@ export function UserMenu({ user }: UserMenuProps) {
         </DropdownMenuTrigger>
         <DropdownMenuContent sideOffset={8} align="start" className="w-[180px]">
           <DropdownMenuItem className="flex-col items-start">
-            <div className="text-xs font-medium">{user?.name}</div>
-            <div className="text-xs text-zinc-500">{user?.email}</div>
+            <div className="text-sm font-medium">{user?.name}</div>
+            <div className="text-sm text-zinc-500">{user?.email}</div>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem className="text-xs">
+          <DropdownMenuItem className="text-sm">
             <a
               href="https://billing.stripe.com/p/login/28o28xa3EbuX092144"
               target="_blank"
@@ -63,7 +63,7 @@ export function UserMenu({ user }: UserMenuProps) {
               Billing
             </a>
           </DropdownMenuItem>
-          <DropdownMenuItem className="text-xs">
+          <DropdownMenuItem className="text-sm">
             <a
               href="https://plugins.sdan.io/privacy"
               target="_blank"
@@ -81,7 +81,7 @@ export function UserMenu({ user }: UserMenuProps) {
                 callbackUrl: '/'
               })
             }
-            className="text-xs"
+            className="text-sm"
           >
             Log Out
           </DropdownMenuItem>
