@@ -19,6 +19,7 @@ import { ClearHistory } from '@/components/clear-history'
 import { UserMenu } from '@/components/user-menu'
 import { LoginButton } from '@/components/login-button'
 
+
 import Image from 'next/image';
 
 
@@ -40,16 +41,20 @@ export async function Header() {
             </SidebarFooter>
           </Sidebar>
         ) : (
-          <Link href="/" target="_blank" rel="nofollow">
+          <>
+            <Link href="/" target="_blank" rel="nofollow">
               <Image
-                src="/favicon.ico"
+                src="/chatwithpdf.png"
                 alt="ChatWith"
-                width={40}
-                height={40}
+                width={30}
+                height={30}
+                className='rounded-md'
               />
-          </Link>
+            </Link>
+            <h1 className="font-semibold ml-3 text-lg text-stone-700">ChatWithPlugins</h1>
+          </>
         )}
-        <div className="flex items-center">
+        {/* <div className="ml-2 flex items-center">
           <IconSeparator className="w-6 h-6 text-muted-foreground/50" />
           {session?.user ? (
             <UserMenu user={session.user} />
@@ -58,25 +63,26 @@ export async function Header() {
               <Link href="/sign-in?callbackUrl=/">Login</Link>
             </Button>
           )}
-        </div>
+        </div> */}
       </div>
       <div className="flex items-center justify-end space-x-2">
         <a
           target="_blank"
           href="https://plugins.sdan.io"
           rel="noopener noreferrer"
-          className={cn(buttonVariants({ variant: 'outline' }))}
+          className={cn(buttonVariants({ variant: 'outline' })) + ' hidden md:flex'}
         >
-          <span className="hidden ml-2 md:flex">Help</span>
+          <span className="">Support</span>
         </a>
-        <a
+        {/* <a
           href="https://chat.openai.com/"
           target="_blank"
           className={cn(buttonVariants())}
         >
           <span className="hidden sm:block">Use ChatGPT</span>
           <span className="sm:hidden">ChatGPT</span>
-        </a>
+        </a> */}
+        <LoginButton text='Login' showGithubIcon={true} className='text-10xl' />
       </div>
     </header>
   )
