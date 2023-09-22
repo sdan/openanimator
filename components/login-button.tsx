@@ -13,7 +13,7 @@ interface LoginButtonProps extends ButtonProps {
 }
 
 export function LoginButton({
-  text = 'Login to ChatWith',
+  text = 'Login to ChatWithPlugins',
   showGithubIcon = false,
   className,
   ...props
@@ -37,7 +37,7 @@ export function LoginButton({
         <IconUser className="mr-2 text-10xl" /> // Increase the size of the GitHub icon by 10 times
       ) : null}
       {text}
-      
+
     </Button>
   )
 }
