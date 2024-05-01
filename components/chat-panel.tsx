@@ -62,28 +62,7 @@ export function ChatPanel({
         </div>
         <div className="h-10 items-center justify-center gap-2 mb-1 hidden md:flex">
           <p className="text-sm text-muted-foreground"> Active plugins: </p>
-          <Button
-            variant="outline"
-            disabled
-            className={functionCalled === 'pdf_retrieval' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
-          >
-            {functionCalled === 'pdf_retrieval' ? "Used PDF Retrieval" : "PDF"}
-          </Button>
-          <Button
-            variant="outline"
-            disabled
-            className={functionCalled === 'video_retrieval' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
-          >
-            {functionCalled === 'video_retrieval' ? "Used Video Retrieval" : "Video"}
-          </Button>
-          <Button
-            variant="outline"
-            disabled
-            className={functionCalled === 'web_retrieval' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}
-          >
-            {functionCalled === 'web_retrieval' ? "Used Web Retrieval" : "Web"}
-          </Button>
-          <Button
+        <Button
             variant="outline"
             disabled
             className={functionCalled === 'generate_math_animation_code' ? (theme === 'dark' ? "bg-white text-black" : "bg-black text-white") : "bg-background"}

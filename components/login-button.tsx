@@ -13,7 +13,7 @@ interface LoginButtonProps extends ButtonProps {
 }
 
 export function LoginButton({
-  text = 'Login to ChatWithPlugins',
+  text = 'Login to OpenAnimator',
   showGithubIcon = false,
   className,
   ...props

@@ -51,7 +51,7 @@ export async function Header() {
                 className='rounded-md'
               />
             </Link>
-            <h1 className="font-semibold ml-3 text-lg text-stone-700">ChatWithPlugins</h1>
+            <h1 className="font-semibold ml-3 text-lg text-stone-700">OpenAnimator(powered by ChatWithPlugins)</h1>
           </>
         )}
       </div>

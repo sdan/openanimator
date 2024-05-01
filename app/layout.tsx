@@ -13,10 +13,10 @@ import { Header } from '@/components/header'
 
 export const metadata: Metadata = {
   title: {
-    default: 'ChatWithPlugins',
-    template: `%s - ChatWithPlugins`
+    default: 'OpenAnimator',
+    template: `%s - OpenAnimator`
   },
-  description: 'ChatWithPlugins is a suite of plugins used by millions to supercharge ChatGPT.',
+  description: 'OpenAnimator',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: 'white' },
     { media: '(prefers-color-scheme: dark)', color: 'black' }

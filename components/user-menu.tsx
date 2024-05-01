@@ -54,17 +54,6 @@ export function UserMenu({ user }: UserMenuProps) {
           <DropdownMenuSeparator />
           <DropdownMenuItem className="text-sm">
             <a
-              href="https://billing.stripe.com/p/login/28o28xa3EbuX092144"
-              target="_blank"
-              rel="nofollow"
-              className="flex items-center"
-            >
-              <IconExternalLink className="mr-2" />
-              Billing
-            </a>
-          </DropdownMenuItem>
-          <DropdownMenuItem className="text-sm">
-            <a
               href="https://plugins.sdan.io/privacy"
               target="_blank"
               rel="nofollow"

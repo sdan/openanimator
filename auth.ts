@@ -26,9 +26,9 @@ export const {
 } = NextAuth({
   providers: [
     Auth0Provider({
-      clientId: "***REMOVED***",
-      clientSecret: "***REMOVED***",
-      issuer: "***REMOVED***"
+      clientId: "<AUTH_CLIENT_ID>",
+      clientSecret: "<AUTH_SECRET>",
+      issuer: "<AUTH_ISSUER>",
     })
   ],
   callbacks: {
