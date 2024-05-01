@@ -157,7 +157,7 @@ export async function chatWithWebRetriever(query: string, url: string) {
 
 export async function chatWithVideoRetriever(query: string, video_id: string) {
   
-  const videoServer = "***REMOVED***/video/load";
+  const videoServer = "https://chatwithvideo-production.up.railway.app/video/load";
 
   // expected input:
   // {
@@ -191,8 +191,8 @@ export async function chatWithVideoRetriever(query: string, video_id: string) {
 
 export async function chatWithPdfRetriever(query: string, pdf_url: string) {
   
-  const loadUrl = "***REMOVED***/pdf/load";
-  const queryUrl = "***REMOVED***/pdf/query";
+  const loadUrl = "https://cardinal.tail8de85.ts.net/pdf/load";
+  const queryUrl = "https://cardinal.tail8de85.ts.net/pdf/query";
 
   // First POST request to load the PDF
   const loadResponse = await fetch(loadUrl, {
@@ -253,7 +253,7 @@ export async function getWeather(city: string) {
 export async function chatWithMathAnimationRender(manim_code: string) {
   console.log("script\n", manim_code);
   console.log("in chatWithMathAnimation");
-  const url = "***REMOVED***/generate_animation_from_string";
+  const url = "https://runitupturbo-production.up.railway.app/generate_animation_from_string";
   console.log("heres what the body looks like", JSON.stringify({
     code: manim_code,
   }));
@@ -346,9 +346,9 @@ class GraphWithLatex(Scene):
   const data = await response.json();
   console.log("chat animation response OK", data);
   const vid_id =  data.id;
-  // ***REMOVED***/get_video_id/a4b649c3-8a6d-4933-b891-c86b95a0314d
-  console.log(`Display this video in markdown ***REMOVED***/get_video/${vid_id}`);
-  return `Output external video link in mp4 to render in markdown. You must use <a> tags. ***REMOVED***/get_video/${vid_id}.mp4`;
+  // https://runitupturbo-production.up.railway.app/get_video_id/a4b649c3-8a6d-4933-b891-c86b95a0314d
+  console.log(`Display this video in markdown https://runitupturbo-production.up.railway.app/get_video/${vid_id}`);
+  return `Output external video link in mp4 to render in markdown. You must use <a> tags. https://runitupturbo-production.up.railway.app/get_video/${vid_id}.mp4`;
 }
 
 export async function chatWithMathAnimationGenerator(concept: string) {
